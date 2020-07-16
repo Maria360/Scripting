@@ -32,16 +32,7 @@ namespace IMC
 
             Console.Write("\nFINITO\n");
 
-            /*Console.Write("Ingrese\nAltura en metros:\nPeso en Kg:\n ");
-            double talla = double.Parse(Console.ReadLine()), peso = double.Parse(Console.ReadLine());
-            double imc = peso / Math.Pow(talla, 2);
 
-            switch (imc)
-            {
-                case  imc<18.5:
-                Console.Write($"Su IMC es {imc} y su clasificación es: peso insuficiente");
-                break;
-            }*/
 
 
         }

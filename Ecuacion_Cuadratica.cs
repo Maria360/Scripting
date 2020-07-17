@@ -15,12 +15,12 @@ namespace EcuacionCuadratica
             double discriminante = Math.Pow(b, 2) - 4 * a * c;
             if (discriminante == 0)
             {
-                double x = -b / 2 * a;
+                double x = -b / (2 * a);
                 Console.Write("La solución es x: " + x);
             }
             else if (discriminante > 0)
             {
-                double x1 = (-b + Math.Sqrt(discriminante)) / 2 * a, x2 = (-b - Math.Sqrt(discriminante)) / 2 * a;
+                double x1 = (-b + Math.Sqrt(discriminante)) / (2 * a), x2 = (-b - Math.Sqrt(discriminante)) / (2 * a);
                 Console.Write($"La solución es\nx1: {x1}\nx2: {x2}\n");
             }
             else

@@ -15,7 +15,7 @@ namespace SimulacroP2_Clase
             string continuar = "s", usarEspecial = "n";
             while (continuar == "s" && vidas>0 && total<puntaje)
             {
-                if (especiales > 0)
+                if (especiales != 0)
                 {
                     Console.WriteLine($"Usted tiene {especiales} dados especiales\n¿Desea usar uno? (s/n)");
                     usarEspecial = Console.ReadLine();
@@ -23,11 +23,8 @@ namespace SimulacroP2_Clase
                     {
                         dadoEspecial = aleatorio.Next(1, 13);
                         total += dadoEspecial;
-                        
-                        
-                        if (continuar == "n") break;
+                        //if (continuar == "n") break;
                         especiales--;
-                        
                         if (dadoEspecial == 1) unos++;
                         if (dadoEspecial == 6) seis++;
                         else seis = 0;
@@ -45,24 +42,22 @@ namespace SimulacroP2_Clase
                         continuar = Console.ReadLine();
                     }
                 }
-                if(usarEspecial=="n"||especiales==0)
+                else if(especiales==0||usarEspecial=="n")
                 {
                     dado = 6/*aleatorio.Next(1, 7)*/;
                     total += dado;
-                    
-                    
                     if (dado == 1) unos++;
-                    if (dado == 6||seis!=2) seis++;
+                    if (dado == 6 || seis < 2) seis++;
                     else seis = 0;
                     Console.WriteLine(seis);
-                    if(vidas <= 3 && seis%2==0) vidas++;
+                    if (vidas <= 3 && seis == 2) vidas++;
                     if (unos == 2)
                     {
                         //unos++;
                         vidas--;
                         if (total >= 10) total -= 10;
                         else total = 0;
-                        
+
                     }
                     if (vidas == 0)
                     {
